@@ -6,7 +6,10 @@ const id = 'v='
 client.once("ready", () => console.log("Бот онлайн"));
 
 client.on('message', message =>{
-    if(!message.content)
+    if(!message.content.startsWith(id) ||message.author.bot) return;
+    const args = message.content.slice(id.length).split(/ +/);
+    const cmd = args.shift().toLowerCase()
+    
 })
 
 client.login(token);
