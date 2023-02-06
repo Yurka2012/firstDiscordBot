@@ -13,8 +13,6 @@ const id = "=";
 
 client.once("ready", () => console.log("Бот онлайн"));
 
-const fs = require('fs');
-
 client.commands = new Collection();
 
 const commandsPath = path.join(__dirname, "cmd");
