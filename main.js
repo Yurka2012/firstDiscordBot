@@ -5,6 +5,17 @@ const id = "=";
 
 client.once("ready", () => console.log("Бот онлайн"));
 
+const fs = require('fs');
+
+client.commands = new Discord.Colaction();
+
+const cmdFiles = fs.readdirSync('./cmd'.filter(file => file.endWith('.js')));
+
+for(const file of commandFiles) {
+  const cmd = require(`./cmd/${file}`);
+  client.cmd.set(cmd.name , cmd);
+}
+
 client.on("message", (message) => {
   if (!message.content.startsWith(id) || message.author.bot) return;
   const args = message.content.slice(id.length).split(/ +/);
@@ -15,8 +26,13 @@ client.on("message", (message) => {
   }
   if (cmd === "help") {
     message.channel.send(
-      "Привет, бро! \n Мой преикс: =\n Мои команды: \n привет (бот будет писать Ку!)"
+      "Привет, бро! \n Мой преикс: =\n Мои команды: \n привет (бот будет писать Ку!) \n пинг (бот отвечает понг!)"
     );
+  }
+  if(cmd === 'пинг') {
+    message.channel.send(
+      'Понг'
+    )
   }
 });
 
