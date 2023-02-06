@@ -1,4 +1,4 @@
-const { Client, IntentsBitField, messageLink, Discord, Collection  } = require("discord.js");
+const { Client, IntentsBitField, Discord } = require("discord.js");
 const { token } = require("./config.json");
 const client = new Client({ intents: [32767] });
 const id = "=";
