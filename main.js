@@ -7,7 +7,7 @@ client.once("ready", () => console.log("Бот онлайн"));
 
 const fs = require('fs');
 
-client.commands = new Discord.Collection();
+client.commands = new Collection();
 
 const cmdFiles = fs.readdirSync('./cmd'.filter(file => file.endWith('.js')));
 
@@ -35,5 +35,5 @@ client.on("message", (message) => {
     )
   }
 });
-
+                                                                                    
 client.login(token);
