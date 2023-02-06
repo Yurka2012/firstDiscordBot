@@ -13,6 +13,9 @@ client.on('message', message =>{
     if(cmd === 'привет') {
         message.channel.send('Ку!')
     }
+    if(cmd === 'help')  {
+        message.channel.send('Привет, бро! \n Мой преикс: =\n Мои команды: \n привет (бот будет писать Ку!)') 
+    }
 })
 
 client.login(token);
