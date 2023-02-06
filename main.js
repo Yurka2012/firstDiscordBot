@@ -1,4 +1,4 @@
-const { Client, IntentsBitField, messageLink } = require("discord.js");
+const { Client, IntentsBitField, messageLink, Discord, Collection  } = require("discord.js");
 const { token } = require("./config.json");
 const client = new Client({ intents: [32767] });
 const id = "=";
@@ -7,7 +7,7 @@ client.once("ready", () => console.log("Бот онлайн"));
 
 const fs = require('fs');
 
-client.commands = new Discord.Colaction();
+client.commands = new Discord.Collection();
 
 const cmdFiles = fs.readdirSync('./cmd'.filter(file => file.endWith('.js')));
 
