@@ -2,7 +2,6 @@
 
 > Мой создатель Yr#1834
 
-**На плагиатьте мой код!**
 
 ```js
 const { Client, IntentsBitField } = require("discord.js");
